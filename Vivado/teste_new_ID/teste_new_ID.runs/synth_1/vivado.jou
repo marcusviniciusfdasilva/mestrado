@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Apr  2 17:56:04 2025
+# Process ID: 5876
+# Current directory: C:/Users/IML/teste_new_ID/teste_new_ID.runs/synth_1
+# Command line: vivado.exe -log rvfpganexys.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rvfpganexys.tcl
+# Log file: C:/Users/IML/teste_new_ID/teste_new_ID.runs/synth_1/rvfpganexys.vds
+# Journal file: C:/Users/IML/teste_new_ID/teste_new_ID.runs/synth_1\vivado.jou
+# Running On: IML-Note, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 8424 MB
+#-----------------------------------------------------------
+source rvfpganexys.tcl -notrace

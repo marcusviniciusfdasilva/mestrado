@@ -1,0 +1,937 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Apr  2 18:03:52 2025
+# Process ID: 19028
+# Current directory: C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1
+# Command line: vivado.exe -log rvfpganexys.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source rvfpganexys.tcl -notrace
+# Log file: C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys.vdi
+# Journal file: C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1\vivado.jou
+# Running On: IML-Note, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 8424 MB
+#-----------------------------------------------------------
+source rvfpganexys.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 431.223 ; gain = 100.352
+Command: link_design -top rvfpganexys -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/IML/teste_new_ID/teste_new_ID.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.dcp' for cell 'swervolf/adc1/XLXI_7'
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1054.309 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2174 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/IML/teste_new_ID/teste_new_ID.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'swervolf/adc1/XLXI_7/inst'
+Finished Parsing XDC File [c:/Users/IML/teste_new_ID/teste_new_ID.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'swervolf/adc1/XLXI_7/inst'
+Parsing XDC File [C:/Users/IML/Documents/GitHub/mestrado/src/rvfpganexys.xdc]
+Finished Parsing XDC File [C:/Users/IML/Documents/GitHub/mestrado/src/rvfpganexys.xdc]
+Parsing XDC File [C:/Users/IML/Documents/GitHub/mestrado/src/LiteDRAM/liteDRAM.xdc]
+Finished Parsing XDC File [C:/Users/IML/Documents/GitHub/mestrado/src/LiteDRAM/liteDRAM.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1285.281 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 121 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 33 instances
+  IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 56 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 29 instances
+
+8 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1285.281 ; gain = 820.023
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1298.383 ; gain = 13.102
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+Ending Cache Timing Information Task | Checksum: 11961bc02
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 1888.066 ; gain = 589.684
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-1287] Pulled Inverter ddr2/ldc/litedramcore_count[0]_i_2 into driver instance ddr2/ldc/serv_rf_top/cpu/mem_if/funct3[2]_i_4, which resulted in an inversion of 52 pins
+INFO: [Opt 31-1287] Pulled Inverter ddr2/ldc/serv_rf_top/cpu/decode/wreq_r_i_1 into driver instance ddr2/ldc/serv_rf_top/cpu/decode/wreq_r_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter ddr2/ldc/timer_zero_old_trigger_i_1 into driver instance ddr2/ldc/timer_value[31]_i_2, which resulted in an inversion of 35 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[0].i_axi_err_slv/dout[0]_i_1__995 into driver instance swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[0].i_axi_err_slv/dout[63]_i_3__10, which resulted in an inversion of 75 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[1].i_axi_demux/gen_demux.i_aw_spill_reg/write_pointer_q[3]_i_1 into driver instance swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[1].i_axi_demux/gen_demux.i_aw_spill_reg/counter_q[4]_i_6__10, which resulted in an inversion of 16 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[1].i_axi_err_slv/dout[1]_i_1__533 into driver instance swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[1].i_axi_err_slv/dout[63]_i_5__2, which resulted in an inversion of 77 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[1].i_axi_err_slv/i_b_fifo/dout[1]_i_1__531 into driver instance swervolf/axi_intercon/axi_xbar/gen_slv_port_demux[1].i_axi_err_slv/i_b_fifo/dout[1]_i_2__270, which resulted in an inversion of 14 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dbg/dbg_sbaddress0_reg/genblock.dff/dffs/gen_spill_reg.a_data_q[aw_chan][addr][2]_i_1__0 into driver instance swervolf/swerv_eh1/swerv/dbg/dbg_sbaddress0_reg/genblock.dff/dffs/gen_spill_reg.a_data_q[aw_chan][addr][2]_i_2, which resulted in an inversion of 81 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dbg/sb_state_reg/dffs/dout[3]_i_1__222 into driver instance swervolf/swerv_eh1/swerv/dbg/sb_state_reg/dffs/dout[3]_i_3__75, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/decode/trap_e4ff/genblock.dff/dffs/dout[8]_i_1__123 into driver instance swervolf/swerv_eh1/swerv/dec/decode/trap_e4ff/genblock.dff/dffs/dout[8]_i_2__59, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/instbuff/ib0ff/genblock.dff/dffs/dout[25]_i_1__122 into driver instance swervolf/swerv_eh1/swerv/dec/instbuff/ib0ff/genblock.dff/dffs/i__i_2, which resulted in an inversion of 38 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/instbuff/ib0ff/genblock.dff/dffs/dout[56]_i_1__6 into driver instance swervolf/swerv_eh1/swerv/dec/instbuff/ib0ff/genblock.dff/dffs/dout[30]_i_2__37, which resulted in an inversion of 36 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/instbuff/ib1ff/genblock.dff/dffs/dout[33]_i_1__11 into driver instance swervolf/swerv_eh1/swerv/dec/instbuff/ib1ff/genblock.dff/dffs/i__i_3, which resulted in an inversion of 55 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/exctype_wb_ff/dout[0]_i_1__802 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/exctype_wb_ff/dout[0]_i_2__291, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/exctype_wb_ff/dout[11]_i_1__117 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/exctype_wb_ff/dout[11]_i_2__54, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout[31]_i_1__72 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout[31]_i_3__64, which resulted in an inversion of 14 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout[8]_i_1__120 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout[8]_i_2__74, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/halt_ff/dout[17]_i_1__131 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/halt_ff/dout[17]_i_2__66, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[0]_i_1__799 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[0]_i_2__369, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[13]_i_1__117 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[13]_i_2__67, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[16]_i_1__114 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[16]_i_2__67, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[17]_i_1__114 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[17]_i_2__65, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[1]_i_1__420 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[1]_i_2__262, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[21]_i_1__107 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[21]_i_2__62, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[24]_i_1__109 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[24]_i_2__57, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[25]_i_1__141 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[25]_i_2__70, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[27]_i_1__100 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[27]_i_2__59, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[28]_i_1__98 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[28]_i_2__58, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[3]_i_1__159 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[3]_i_2__104, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[6]_i_1__144 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[6]_i_2__77, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[8]_i_1__122 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[8]_i_2__78, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[9]_i_1__125 into driver instance swervolf/swerv_eh1/swerv/dec/tlu/lsu_error_dc4ff/dout[9]_i_2__74, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/obuf_tag0ff/dffs/dout[0]_i_1__179 into driver instance swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/obuf_tag0ff/dffs/dout[0]_i_2__40, which resulted in an inversion of 25 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/obuf_tag0ff/dffs/dout[1]_i_1__111 into driver instance swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/obuf_tag0ff/dffs/dout[1]_i_2__27, which resulted in an inversion of 65 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[16]_i_10__10 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[14]_i_2__71, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[16]_i_11__6 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[13]_i_2__68, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[20]_i_4__22 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[20]_i_2__53, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[20]_i_5__19 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[19]_i_2__55, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[20]_i_6__16 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[18]_i_2__57, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[24]_i_4__24 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[24]_i_2__49, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[24]_i_5__21 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[23]_i_2__53, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[24]_i_6__18 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[22]_i_2__55, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[24]_i_7__14 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[21]_i_2__55, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[27]_i_4__24 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/rs1_inc0_carry__2_i_5, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[27]_i_6__20 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[26]_i_2__53, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[29]_i_5__17 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/rs1_inc0_carry__3_i_5, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[29]_i_6__16 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/dout[29]_i_4__22, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/rs1_inc0_carry__3_i_1 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/lsu_pkt_dc3ff/genblock.dff/dffs/rs1_inc0_carry__3_i_4, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/offsetff/genblock.dff/dffs/dout[28]_i_1__121 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/offsetff/genblock.dff/dffs/dout[28]_i_2__50, which resulted in an inversion of 9 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/offsetff/genblock.dff/dffs/dout[30]_i_1__129 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/offsetff/genblock.dff/dffs/dout[30]_i_2__60, which resulted in an inversion of 7 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/offsetff/genblock.dff/dffs/dout[31]_i_2__115 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/offsetff/genblock.dff/dffs/dout[31]_i_3__98, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[16]_i_4__26 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[16]_i_2__61, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[16]_i_5__22 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[15]_i_2__63, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[20]_i_7__12 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[17]_i_2__57, which resulted in an inversion of 6 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[27]_i_5__23 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[27]_i_2__50, which resulted in an inversion of 5 pins
+INFO: [Opt 31-1287] Pulled Inverter swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[27]_i_7__15 into driver instance swervolf/swerv_eh1/swerv/lsu/lsu_lsc_ctl/rs1ff/genblock.dff/dffs/dout[25]_i_2__63, which resulted in an inversion of 5 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 13b78c90e
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2242.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 23 cells and removed 95 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1b5400b29
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2242.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 1 cells and removed 2 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: e5d492d7
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2242.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 2 cells and removed 2 cells
+INFO: [Opt 31-1021] In phase Sweep, 24 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: e5d492d7
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2242.242 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: e5d492d7
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2242.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: f2e4a4e4
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2242.242 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              23  |              95  |                                              0  |
+|  Constant propagation         |               1  |               2  |                                              0  |
+|  Sweep                        |               2  |               2  |                                             24  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.180 . Memory (MB): peak = 2242.242 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: e053105c
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2242.242 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Power 33-23] Power model is not available for STARTUPE2
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 59 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 118
+Ending PowerOpt Patch Enables Task | Checksum: e053105c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.418 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Ending Power Optimization Task | Checksum: e053105c
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:19 . Memory (MB): peak = 2657.512 ; gain = 415.270
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: e053105c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: e053105c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+89 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:01:03 ; elapsed = 00:00:43 . Memory (MB): peak = 2657.512 ; gain = 1372.230
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file rvfpganexys_drc_opted.rpt -pb rvfpganexys_drc_opted.pb -rpx rvfpganexys_drc_opted.rpx
+Command: report_drc -file rvfpganexys_drc_opted.rpt -pb rvfpganexys_drc_opted.pb -rpx rvfpganexys_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 43 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 962a9eda
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10b3ae406
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 2000d2bbf
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:19 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 2000d2bbf
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:19 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 2000d2bbf
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:20 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 139eb8999
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1e38c1998
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:27 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1e38c1998
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:27 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 166470a41
+
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:07 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 7 LUTNM shape to break, 1517 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 7, two critical 0, total 7, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 523 nets or LUTs. Breaked 7 LUTs, combined 516 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 1 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            7  |            516  |                   523  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            1  |              0  |                     1  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            8  |            516  |                   524  |           0  |           9  |  00:00:02  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: 1963c7d78
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:01:14 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: 1274669e7
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:17 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1274669e7
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:17 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: e54a029d
+
+Time (s): cpu = 00:02:06 ; elapsed = 00:01:21 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 13761bab3
+
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:30 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: a9037c4e
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:30 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1415deb29
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:30 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 104d1d4f7
+
+Time (s): cpu = 00:02:35 ; elapsed = 00:01:39 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: cccac7a6
+
+Time (s): cpu = 00:02:59 ; elapsed = 00:02:06 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 146da7090
+
+Time (s): cpu = 00:03:04 ; elapsed = 00:02:12 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 101b96260
+
+Time (s): cpu = 00:03:05 ; elapsed = 00:02:13 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 109b53525
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:02:27 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 109b53525
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:02:28 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: c8918c89
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-1.151 | TNS=-138.434 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1675b13c6
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Place 46-33] Processed net clk_gen/o_rst_core_reg_1, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net clk_gen/rst_core, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net clk_gen/o_rst_core_reg_3, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net ddr2/ldc/FDPE_3_0, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-33] Processed net swervolf/chacha20/core/ready_new, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-56] BUFG insertion identified 5 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 5, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 1025d9dfc
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: c8918c89
+
+Time (s): cpu = 00:03:56 ; elapsed = 00:02:47 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.545. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 9713399a
+
+Time (s): cpu = 00:04:08 ; elapsed = 00:02:58 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Time (s): cpu = 00:04:08 ; elapsed = 00:02:58 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 9713399a
+
+Time (s): cpu = 00:04:08 ; elapsed = 00:02:58 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 9713399a
+
+Time (s): cpu = 00:04:08 ; elapsed = 00:02:59 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                8x8|                8x8|
+|___________|___________________|___________________|
+|      South|                2x2|                8x8|
+|___________|___________________|___________________|
+|       East|                2x2|                4x4|
+|___________|___________________|___________________|
+|       West|                1x1|                4x4|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 9713399a
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:02:59 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 9713399a
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:02:59 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 2657.512 ; gain = 0.000
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:02:59 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: acaf6bb9
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:03:00 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Ending Placer Task | Checksum: 40dc2e15
+
+Time (s): cpu = 00:04:10 ; elapsed = 00:03:00 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+133 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:04:14 ; elapsed = 00:03:02 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 2657.512 ; gain = 0.000
+report_design_analysis: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:26 ; elapsed = 00:00:17 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_io -file rvfpganexys_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.138 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file rvfpganexys_utilization_placed.rpt -pb rvfpganexys_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file rvfpganexys_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+142 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 2657.512 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 2657.512 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 686e273 ConstDB: 0 ShapeSum: 3a554ba2 RouteDB: 0
+Post Restoration Checksum: NetGraph: 4e0251db NumContArr: bd4879fb Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: 10b4acbd6
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:39 . Memory (MB): peak = 2750.016 ; gain = 87.047
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 10b4acbd6
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:40 . Memory (MB): peak = 2750.016 ; gain = 87.047
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 10b4acbd6
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:40 . Memory (MB): peak = 2750.016 ; gain = 87.047
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 1dc096d98
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:00 . Memory (MB): peak = 2793.406 ; gain = 130.438
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.751  | TNS=0.000  | WHS=-3.810 | THS=-757.172|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00557079 %
+  Global Horizontal Routing Utilization  = 0.00504405 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 59941
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 59938
+  Number of Partially Routed Nets     = 3
+  Number of Node Overlaps             = 1
+
+Phase 2 Router Initialization | Checksum: 1350edf1c
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:01:10 . Memory (MB): peak = 2940.324 ; gain = 277.355
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 1350edf1c
+
+Time (s): cpu = 00:01:41 ; elapsed = 00:01:10 . Memory (MB): peak = 2940.324 ; gain = 277.355
+Phase 3 Initial Routing | Checksum: 1328d34bc
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:01:30 . Memory (MB): peak = 2940.332 ; gain = 277.363
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 19981
+ Number of Nodes with overlaps = 3283
+ Number of Nodes with overlaps = 872
+ Number of Nodes with overlaps = 214
+ Number of Nodes with overlaps = 81
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.033 | TNS=-0.349 | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 2161e350a
+
+Time (s): cpu = 00:04:38 ; elapsed = 00:03:21 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 2813
+ Number of Nodes with overlaps = 895
+ Number of Nodes with overlaps = 319
+ Number of Nodes with overlaps = 141
+ Number of Nodes with overlaps = 59
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.251  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: de25100d
+
+Time (s): cpu = 00:05:36 ; elapsed = 00:04:02 . Memory (MB): peak = 2941.141 ; gain = 278.172
+Phase 4 Rip-up And Reroute | Checksum: de25100d
+
+Time (s): cpu = 00:05:36 ; elapsed = 00:04:02 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1387d760d
+
+Time (s): cpu = 00:05:42 ; elapsed = 00:04:06 . Memory (MB): peak = 2941.141 ; gain = 278.172
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.313  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 1387d760d
+
+Time (s): cpu = 00:05:42 ; elapsed = 00:04:06 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1387d760d
+
+Time (s): cpu = 00:05:42 ; elapsed = 00:04:06 . Memory (MB): peak = 2941.141 ; gain = 278.172
+Phase 5 Delay and Skew Optimization | Checksum: 1387d760d
+
+Time (s): cpu = 00:05:42 ; elapsed = 00:04:07 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 163258ab4
+
+Time (s): cpu = 00:05:49 ; elapsed = 00:04:11 . Memory (MB): peak = 2941.141 ; gain = 278.172
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.313  | TNS=0.000  | WHS=-1.940 | THS=-3.965 |
+
+Phase 6.1 Hold Fix Iter | Checksum: 106c4dbd4
+
+Time (s): cpu = 00:05:50 ; elapsed = 00:04:12 . Memory (MB): peak = 2941.141 ; gain = 278.172
+Phase 6 Post Hold Fix | Checksum: 84087afa
+
+Time (s): cpu = 00:05:50 ; elapsed = 00:04:12 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 22.0657 %
+  Global Horizontal Routing Utilization  = 23.8177 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 11817f4a9
+
+Time (s): cpu = 00:05:51 ; elapsed = 00:04:12 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 11817f4a9
+
+Time (s): cpu = 00:05:51 ; elapsed = 00:04:13 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 18f3fe0e9
+
+Time (s): cpu = 00:05:59 ; elapsed = 00:04:22 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 1e47cd39f
+
+Time (s): cpu = 00:06:06 ; elapsed = 00:04:27 . Memory (MB): peak = 2941.141 ; gain = 278.172
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.313  | TNS=0.000  | WHS=0.050  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1e47cd39f
+
+Time (s): cpu = 00:06:07 ; elapsed = 00:04:27 . Memory (MB): peak = 2941.141 ; gain = 278.172
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:06:07 ; elapsed = 00:04:27 . Memory (MB): peak = 2941.141 ; gain = 278.172
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+158 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:06:14 ; elapsed = 00:04:31 . Memory (MB): peak = 2941.141 ; gain = 283.629
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 2941.141 ; gain = 0.000
+report_design_analysis: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2941.141 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:29 ; elapsed = 00:00:20 . Memory (MB): peak = 2941.141 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_drc -file rvfpganexys_drc_routed.rpt -pb rvfpganexys_drc_routed.pb -rpx rvfpganexys_drc_routed.rpx
+Command: report_drc -file rvfpganexys_drc_routed.rpt -pb rvfpganexys_drc_routed.pb -rpx rvfpganexys_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2941.141 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_methodology -file rvfpganexys_methodology_drc_routed.rpt -pb rvfpganexys_methodology_drc_routed.pb -rpx rvfpganexys_methodology_drc_routed.rpx
+Command: report_methodology -file rvfpganexys_methodology_drc_routed.rpt -pb rvfpganexys_methodology_drc_routed.pb -rpx rvfpganexys_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/Users/IML/teste_new_ID/teste_new_ID.runs/impl_1/rvfpganexys_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:39 ; elapsed = 00:00:22 . Memory (MB): peak = 2952.402 ; gain = 11.262
+INFO: [runtcl-4] Executing : report_power -file rvfpganexys_power_routed.rpt -pb rvfpganexys_power_summary_routed.pb -rpx rvfpganexys_power_routed.rpx
+Command: report_power -file rvfpganexys_power_routed.rpt -pb rvfpganexys_power_summary_routed.pb -rpx rvfpganexys_power_routed.rpx
+INFO: [Power 33-23] Power model is not available for STARTUPE2
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+171 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:35 ; elapsed = 00:00:23 . Memory (MB): peak = 2976.445 ; gain = 24.043
+INFO: [runtcl-4] Executing : report_route_status -file rvfpganexys_route_status.rpt -pb rvfpganexys_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file rvfpganexys_timing_summary_routed.rpt -pb rvfpganexys_timing_summary_routed.pb -rpx rvfpganexys_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file rvfpganexys_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file rvfpganexys_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file rvfpganexys_bus_skew_routed.rpt -pb rvfpganexys_bus_skew_routed.pb -rpx rvfpganexys_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force rvfpganexys.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC BIIVRC-1] Bank IO standard internal Vref conflict: Conflicting INTERNAL_VREF constraint in Bank 34.  Some ports in this bank, for example, ddram_dq[0]   (SSTL18_II, Vref=0.900V) 
+ at site IOB_X1Y54 conflict with constrained INTERNAL_VREF of 0.750V.
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer ddr2/ldc/IOBUFDS/IBUFDS has no loads. It is recommended to have an input buffer drive an internal load.
+WARNING: [DRC BUFC-1] Input Buffer Connections: Input buffer ddr2/ldc/IOBUFDS_1/IBUFDS has no loads. It is recommended to have an input buffer drive an internal load.
+WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1840 rule limit reached: 20 violations have been found.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__0 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg input swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__0 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg input swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__0 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg input swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__0 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__3 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__3/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg input swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg__0 input swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2 input swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1 output swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2 output swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1 output swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2 output swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1 output swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2 output swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1 output swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2 output swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0 output swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1 output swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2 output swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0 multiplier stage swervolf/poly/core/pblock_inst/mulacc0/mul_reg0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1 multiplier stage swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2 multiplier stage swervolf/poly/core/pblock_inst/mulacc0/mul_reg0__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg multiplier stage swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg__0 multiplier stage swervolf/poly/core/pblock_inst/mulacc0/mul_reg_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0 multiplier stage swervolf/poly/core/pblock_inst/mulacc1/mul_reg0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1 multiplier stage swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2 multiplier stage swervolf/poly/core/pblock_inst/mulacc1/mul_reg0__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg multiplier stage swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg__0 multiplier stage swervolf/poly/core/pblock_inst/mulacc1/mul_reg_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0 multiplier stage swervolf/poly/core/pblock_inst/mulacc2/mul_reg0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1 multiplier stage swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2 multiplier stage swervolf/poly/core/pblock_inst/mulacc2/mul_reg0__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg multiplier stage swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg__0 multiplier stage swervolf/poly/core/pblock_inst/mulacc2/mul_reg_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0 multiplier stage swervolf/poly/core/pblock_inst/mulacc3/mul_reg0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1 multiplier stage swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2 multiplier stage swervolf/poly/core/pblock_inst/mulacc3/mul_reg0__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg multiplier stage swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg__0 multiplier stage swervolf/poly/core/pblock_inst/mulacc3/mul_reg_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 multiplier stage swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0 multiplier stage swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1 multiplier stage swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2 multiplier stage swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[0]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[10]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[11]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[12]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[13]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[14]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[15]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[1]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[2]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[3]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[4]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[5]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[6]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[7]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[8]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC DPOR-1] Asynchronous load check: DSP swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e20 output is connected to registers with an asynchronous reset (swervolf/swerv_eh1/swerv/exu/mul_e1/prod_e3_ff/genblock.dff/dffs/dout_reg[9]). This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 ddr2/ldc/storage_10_reg_0 has an input control pin ddr2/ldc/storage_10_reg_0/ENBWREN (net: ddr2/ldc/grant_reg_0) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_w/i_dst/i_spill_register/gen_spill_reg.a_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 ddr2/ldc/storage_10_reg_0 has an input control pin ddr2/ldc/storage_10_reg_0/ENBWREN (net: ddr2/ldc/grant_reg_0) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_w/i_dst/i_spill_register/gen_spill_reg.b_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 ddr2/ldc/storage_13_reg has an input control pin ddr2/ldc/storage_13_reg/ENARDEN (net: ddr2/ldc/read_r_buffer_syncfifo_re) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_r/i_src/gen_sync[0].i_sync/reg_q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 ddr2/ldc/storage_13_reg has an input control pin ddr2/ldc/storage_13_reg/ENARDEN (net: ddr2/ldc/read_r_buffer_syncfifo_re) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_r/i_src/gen_sync[1].i_sync/reg_q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 ddr2/ldc/storage_13_reg has an input control pin ddr2/ldc/storage_13_reg/ENARDEN (net: ddr2/ldc/read_r_buffer_syncfifo_re) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_r/i_src/wptr_q_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 ddr2/ldc/storage_13_reg has an input control pin ddr2/ldc/storage_13_reg/ENARDEN (net: ddr2/ldc/read_r_buffer_syncfifo_re) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_r/i_src/wptr_q_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[28]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[29]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[30]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[31]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_0/ADDRARDADDR[14] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 ddr2/ldc/storage_10_reg_1 has an input control pin ddr2/ldc/storage_10_reg_1/ENBWREN (net: ddr2/ldc/grant_reg_0) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_w/i_dst/i_spill_register/gen_spill_reg.a_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 ddr2/ldc/storage_10_reg_1 has an input control pin ddr2/ldc/storage_10_reg_1/ENBWREN (net: ddr2/ldc/grant_reg_0) which is driven by a register (cdc/i_axi_cdc/i_cdc_fifo_gray_w/i_dst/i_spill_register/gen_spill_reg.b_full_q_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/dec/tlu/freeff/dout_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[28]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[29]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[30]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[31]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2 has an input control pin swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ram_core_reg_2/ADDRARDADDR[13] (net: swervolf/swerv_eh1/mem/Gen_dccm_enable.dccm/mem_bank[0].dccm_bank/ADR[10]) which is driven by a register (swervolf/swerv_eh1/swerv/lsu/bus_intf/bus_buffer/ld_bus_dataff/dout_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 150 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./rvfpganexys.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+12 Infos, 150 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:53 ; elapsed = 00:00:35 . Memory (MB): peak = 3548.664 ; gain = 568.961
+INFO: [Common 17-206] Exiting Vivado at Wed Apr  2 18:15:42 2025...
