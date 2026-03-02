@@ -21,6 +21,18 @@
 //
 //********************************************************************************
 
+// -----------------------------------------------------------------------------
+// Modifications:
+//   - Extended and adapted for cryptographic peripherals integration.
+//      - Integration of ChaCha20 cryptographic peripheral
+//      - Integration of Poly1305 authentication peripheral
+//      - Integration of XADC peripheral
+//   - Architectural adaptations for Wishbone-based communicatio
+//
+// Modifications Copyright (c) 2025
+//   Marcus Vinicius F. da Silva
+// -----------------------------------------------------------------------------
+
 `default_nettype none
 module rvfpgasim
   #(parameter bootrom_file  = "")

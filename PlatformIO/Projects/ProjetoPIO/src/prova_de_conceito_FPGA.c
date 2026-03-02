@@ -1,3 +1,6 @@
+// Copyright (c) 2025 Marcus Vinicius F. da Silva
+// SPDX-License-Identifier: MIT
+
 #if defined(D_NEXYS_A7) 
 #include <bsp_printf.h> 
 #include <bsp_mem_map.h> 

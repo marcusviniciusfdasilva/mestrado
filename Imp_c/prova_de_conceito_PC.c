@@ -1,3 +1,6 @@
+// Copyright (c) 2025 Marcus Vinicius F. da Silva
+// SPDX-License-Identifier: MIT
+
 #include <windows.h>
 #include <stdio.h>
 #include <stdint.h>

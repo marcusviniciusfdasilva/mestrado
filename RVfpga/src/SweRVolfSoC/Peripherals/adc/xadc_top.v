@@ -17,6 +17,10 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
+// Copyright (c) 2024 Renato José dos Santos Farinha 
+// SPDX-License-Identifier: MIT
+
 `timescale 1ns/1ps
 
 module xadc_top(
